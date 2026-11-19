@@ -106,19 +106,20 @@ STORIES = [
 
 def draw_icon(d, kind, x, y, s, color):
     if kind == "gamepad":
-        # Controller body, d-pad and buttons
-        d.rounded_rectangle([x + 4, y + 22, x + 64, y + 52], radius=12,
+        # Controller body with grips, d-pad and four buttons
+        d.rounded_rectangle([x + 8, y + 20, x + 60, y + 50], radius=11,
                             fill=color)
-        d.polygon([(x + 4, y + 34), (x + 12, y + 26), (x + 16, y + 38),
-                   (x + 16, y + 50), (x + 4, y + 46)], fill=color)
-        d.polygon([(x + 64, y + 34), (x + 56, y + 26), (x + 52, y + 38),
-                   (x + 52, y + 50), (x + 64, y + 46)], fill=color)
-        d.rectangle([x + 16, y + 30, x + 26, y + 46], fill=(255, 255, 255))
-        d.rectangle([x + 12, y + 34, x + 30, y + 42], fill=(255, 255, 255))
-        for bx, by in [(x + 44, y + 30), (x + 54, y + 30), (x + 44, y + 40),
-                       (x + 54, y + 40)]:
+        d.polygon([(x + 8, y + 32), (x + 16, y + 26), (x + 20, y + 40),
+                   (x + 18, y + 54), (x + 8, y + 50)], fill=color)
+        d.polygon([(x + 60, y + 32), (x + 52, y + 26), (x + 48, y + 40),
+                   (x + 50, y + 54), (x + 60, y + 50)], fill=color)
+        d.rectangle([x + 16, y + 28, x + 24, y + 42], fill=(255, 255, 255))
+        d.rectangle([x + 12, y + 32, x + 28, y + 38], fill=(255, 255, 255))
+        for bx, by in [(x + 42, y + 26), (x + 51, y + 26), (x + 42, y + 35),
+                       (x + 51, y + 35)]:
             d.ellipse([bx, by, bx + 7, by + 7], fill=(245, 158, 11))
-        d.ellipse([x + 32, y + 44, x + 36, y + 48], fill=(255, 255, 255))
+        d.ellipse([x + 31, y + 42, x + 35, y + 46], fill=(255, 255, 255))
+        d.ellipse([x + 37, y + 42, x + 41, y + 46], fill=(255, 255, 255))
     elif kind == "scales":
         # Post, beam, two pans and base
         d.line([x + 34, y + 8, x + 34, y + 56], fill=color, width=5)
